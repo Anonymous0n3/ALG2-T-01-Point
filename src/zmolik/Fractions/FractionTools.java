@@ -36,18 +36,16 @@ public class FractionTools {
     public Fraction getFractionFromDouble(String input) {
         if (input.contains(" ")) {
             String[] fractionTemp = input.split(" ");
-            int whole = Integer.parseInt(fractionTemp[0]);
-            String[] fraction = fractionTemp[1].split("/");
-            int numerator = Integer.parseInt(fraction[0]);
-            int denominator = Integer.parseInt(fraction[1]);
-            return new Fraction(whole * denominator + numerator, denominator);
+            int numerator = Integer.parseInt(fractionTemp[0]);
+            int denominator = Integer.parseInt(fractionTemp[1]);
+            return simplify(new Fraction(numerator, denominator));
         } else if (input.contains("/")) {
             String[] fraction = input.split("/");
             int numerator = Integer.parseInt(fraction[0]);
             int denominator = Integer.parseInt(fraction[1]);
             return simplify(new Fraction(numerator, denominator));
         } else {
-            return new Fraction(Integer.parseInt(input), 1);
+            return simplify(new Fraction(Integer.parseInt(input), 1));
 
         }
     }
