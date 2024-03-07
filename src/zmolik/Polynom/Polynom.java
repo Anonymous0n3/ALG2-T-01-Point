@@ -3,12 +3,9 @@ package zmolik.Polynom;
 public class Polynom {
     private int[] coeficients;
 
-    public Polynom(int[] coeficients) {
+    //Constructor for polynom with just coeficients
+    public Polynom(int... coeficients) {
         this.coeficients = coeficients;
-    }
-
-    public Polynom(int degree) {
-        coeficients = new int[degree + 1];
     }
 
     public int[] getCoeficients() {
