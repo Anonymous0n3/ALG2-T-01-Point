@@ -71,5 +71,6 @@ public class NShape {
         }
         return new Point(x / weight, y / weight, weight);
     }
+    
 
 }
